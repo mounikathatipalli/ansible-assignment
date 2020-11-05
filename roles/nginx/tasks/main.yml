@@ -1,0 +1,15 @@
+# tasks file for nginx
+---
+- name: Install nginx server
+  apt: name=nginx state=latest update_cache=yes
+
+- name: Use Custom Configuration file
+  copy: src=nginx.conf dest=/etc/nginx/
+  notify:
+    - Restart Apache Service
+
+- name: Use Custom Index.html file
+  copy: src=index.html dest=/var/www/html/
+
+- name: Start nginx service
+  service: name=nginx state=started

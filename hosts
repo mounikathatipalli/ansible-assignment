@@ -1,0 +1,14 @@
+[controller]
+127.0.0.1 ansible_connection=local
+
+[webserver1]
+172.31.95.123 ansible_user=ubuntu
+
+[webserver2]
+172.31.28.152 ansible_user=ubuntu
+
+[servers]
+127.0.0.1 ansible_connection=local
+172.31.95.123 ansible_user=ubuntu
+172.31.28.152 ansible_user=ubuntu
+
